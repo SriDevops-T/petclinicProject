@@ -12,6 +12,8 @@
   <repository>
     <id>springpetclinic</id>
     <url>http://localhost:8081/repository/springpetclinic/</url>
+      <username>admin</username>
+      <password>admin123</password>
   </repository>
 </distributionManagement>
 
