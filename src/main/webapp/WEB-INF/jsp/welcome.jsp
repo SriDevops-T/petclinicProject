@@ -11,7 +11,7 @@
 <jsp:include page="fragments/htmlHeader.jsp"/>
 
 <body>
-    <h1>WELCOME TO LAFOOT AND LAVANGA</h1>
+   
 <petclinic:bodyHeader menuName="home"/>
 
 <div class="container-fluid">
