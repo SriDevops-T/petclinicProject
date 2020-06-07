@@ -10,8 +10,8 @@
 	
 <distributionManagement>
   <repository>
-    <id>nexus-petclinic</id>
-    <url>http://localhost:8081/repository/nexus-petclinic/</url>
+    <id>petclinic</id>
+    <url>http://3.21.171.249:8081/repository/PetClinic//</url>
      
   </repository>
 </distributionManagement>
