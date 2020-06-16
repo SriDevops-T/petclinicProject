@@ -1,0 +1,102 @@
+#!/bin/bash
+stopTomcat()
+{
+ if netstat -lntp | grep 8085
+ then
+ echo "tomcat is available in this server andd running"
+ cd /opt/tomcat/bin
+ echo "going to the folder path"
+# testfilename=/opt/tomcat/bin/shutdown.sh
+ if [ -f /opt/tomcat/bin/shutdown.sh ]
+ then
+ echo " file exists please start"
+ sh /opt/tomcat/bin/shutdown.sh
+ echo "shutdown script running"
+ else
+ echo "something went wrong unableto stop"
+ fi
+ else
+
+ echo "tomcat is not runnign please check once"
+ fi
+ sleep 100
+}
+
+startTomcat()
+{
+ if netstat -lntp | grep 8085
+ then
+ echo "tomcat is already running"
+ else
+ echo "going to start"
+ sh /opt/tomcat/bin/startup.sh
+ echo "tomcat start up"
+ fi
+}
+
+appBackUp()
+{
+ echo "inside app Back up func"
+ if [ -f /opt/tomcat/webapps/*.war ]
+ then
+ echo "file exists so please take backup"
+ mv /opt/tomcat/webapps/*.war /myBackUp/
+ echo "file moved to back up diecctory"
+ else
+ echo "fnf so can not take back up"
+ fi
+}
+
+appDeploy()
+{
+ startTomcat
+ appBackUp
+ echo "strat deploying the war file"
+ if [ -f /root/testRepo0905/myRepo/PetClinic/pom.xml ]
+ then
+ echo "pom file exists and ready to deploy"
+ cd /root/testRepo0905/myRepo/PetClinic
+ mvn tomcat7:deploy
+ else
+ echo "pom file does not exists please check"
+ fi
+}
+
+appUnDeploy()
+{
+ if netstat -lntp | grep 8085
+ then
+ echo "tomcat is running, can do undeploy"
+ cd /root/testRepo0905/myRepo/PetClinic
+ echo "going to undeploy"
+ mvn tomcat7:undeploy
+ else
+ echo "tomcat is not running please check"
+ fi
+}
+
+appReDeploy()
+{
+ if netstat -lntp | grep 8085
+ then
+ echo "tomcat is running , can do redeploy"
+ cd /root/testRepo0905/myRepo/PetClinic
+ echo "going to redeploy"
+ mvn tomcaat7:redeploy
+ else
+ echo "tomcat is not running please check"
+ fi
+}
+
+stopStartTomcat()
+{
+ stopTomcat
+ startTomcat
+}
+appBackUp
+# startTomcat
+# stopTomcat
+# appDeploy
+# stopStartTomcat
+# appUnDeploy
+# appReDeploy
