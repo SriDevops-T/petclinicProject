@@ -1,19 +1,29 @@
 pipeline
 {
+    agent any
+    stages{
         
-        agent any
-        
+        stage("Execute Shell")
+        {
+            steps
+            {
+                sh 'pwd'
                 
-                stages
+            }
+        }
+            stage("checkout the code from the repo")
+            {
+                
+                steps
                 {
-                        stage("checkout")
-                        {
-                                steps{
-                                       git url:'https://github.com/hellotohello/PETCLINIC.git'
-                                        //welcomee
-                                }
-                        }
+                    git credentialsId: 'gitcredentials', url: 'https://github.com/hellotohello/springproject.git'
                 }
-        
+                
+                
+                
+            }
+        }
+    
+    
 }
                                         
