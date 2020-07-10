@@ -1,37 +1,35 @@
 pipeline
 {
-    agent any 
-    stages{
-        
-        stage("Run Shell")
-        {
-            
-            steps
-            {
-                
-                sh 'pwd'
-                sh 'ifconfig'
-                
-            }
-            
-        }
-        
-        stage("checkout-git")
-        {
-            
-            steps
-            {
-                
-        git credentialsId: 'gitcredentials', url: 'https://github.com/hellotohello/springproject.git'        
-                
-                
-            }
-            
-            
-            
-        }
-        
-        
-    }
-    
+agent any
+stages
+{
+stage("checkout")
+{
+  steps
+{
+   git credentialsId: 'gitcredentials', url: 'https://github.com/hellotohello/springproject.git'
+}
+}
+stage("compile")
+{
+  steps
+  {
+    bat "mvn compile"
+  }
+}
+stage("test")
+ {
+   steps
+{
+   bat "mvn test"
+}
+}
+stage("package")
+ {
+   steps
+ {
+    bat "mvn package"
+ }
+}
+}
 }
