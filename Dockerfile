@@ -7,7 +7,7 @@ COPY --from=clone  /app/springproject /app
 RUN mvn package
 FROM tomcat:7-jre7
 
-MAINTAINER "srinivas<chefatops@gmail.com>"
+MAINTAINER "srinivas<hellosrinivas8@gmail.com>"
 
 ADD settings.xml /usr/local/tomcat/conf/
 ADD tomcat-users.xml /usr/local/tomcat/conf/
