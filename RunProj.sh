@@ -1,3 +1,3 @@
-mvn validate
-mvn package 
-mvn install
+
+mvn validate package 
+
