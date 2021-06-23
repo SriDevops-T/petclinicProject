@@ -17,6 +17,4 @@ ADD settings.xml /usr/local/tomcat/conf/
 ADD tomcat-users.xml /user/local/tomcat/conf/
 
 COPY --from=build /app/target/spring-petclinic-4.2.war /usr/local/tomcat/webapps
-~
-~
-~
+
