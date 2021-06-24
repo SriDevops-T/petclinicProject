@@ -5,7 +5,7 @@
     <groupId>org.springframework.samples</groupId>
     <artifactId>spring-petclinic</artifactId>
     <version>4.2</version>
-  <name>spring-petclinic-4.2</name>
+  <name>petclinic</name>
     <packaging>war</packaging>
     
     
