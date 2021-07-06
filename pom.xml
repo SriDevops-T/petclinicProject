@@ -8,15 +8,15 @@
   <name>petclinic</name>
     <packaging>war</packaging>
     
-    
-	
-<distributionManagement>
-  <repository>
-    <id>petclinic</id>
-    <url>http://3.21.171.249:8081/repository/PetClinic//</url>
-     
-  </repository>
+    <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-8-94.us-west-2.compute.internal-releases</name>
+        <url>http://52.38.1.177:8081/artifactory/libs-release-local</url>
+    </repository>
 </distributionManagement>
+	
+
 
     <properties>
 
