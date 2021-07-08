@@ -82,10 +82,9 @@ stage('Copy Dockerfile & Playbook to Ansible Server') {
             
             steps {
                   sshagent(['sshkey']) {
-                      dir("/var/lib/jenkins/workspace/DEMOCICDPIPELINE")
-                      {
+                      
                        sh "scp -o StrictHostKeyChecking=no Dockerfile ec2-user@35.160.235.224:/home/admin"
-                      }
+                      
                     }
                 }
             
