@@ -1,0 +1,22 @@
+#Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecomm-deploy
+  labels:
+    app: ecomm-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ecomm-app
+  template:
+    metadata:
+      labels:
+        app: ecomm-app
+    spec:
+      containers:
+      - name: ecomm-webapp
+        image: cicdcontainer/webappproject:1.0
+        ports:
+        - containerPort: 8888
