@@ -1,0 +1,37 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Pull .war artifact from Artifactory
+    become: true
+    get_url:
+      url: http://52.40.198.217:8081/artifactory/libs-release-local/MyEcommerceGroup/MyEcommerceArtifact/1.0-RELEASE/MyEcommerceArtifact-1.0-RELEASE.war
+      dest: /opt
+      url_username: admin
+      url_password: admin123
+
+
+
+
+
+  - name: Build image and with build args
+    docker_image:
+      name: ecommweb
+      build:
+        path: /opt
+        pull: no
+        args:
+          listen_port: 8888
+      source: build
+
+  - name: Log into DockerHub
+    docker_login:
+     username: cicdcontainer
+     password: hello_hello@1234.
+
+
+  - name: Push to docker hub
+    docker_image:
+      name: ecommweb
+      repository: cicdcontainer/webappproject:1.0
+      push: yes
+      source: local
