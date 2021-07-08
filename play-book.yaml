@@ -4,7 +4,7 @@
   - name: Pull .war artifact from Artifactory
     become: true
     get_url:
-      url: http://52.40.198.217:8081/artifactory/libs-release-local/MyEcommerceGroup/MyEcommerceArtifact/1.0-RELEASE/MyEcommerceArtifact-1.0-RELEASE.war
+      url: http://34.212.121.64:8081/artifactory/libs-release-local/org/springframework/samples/spring-petclinic/4.2-RELEASE/spring-petclinic-4.2-RELEASE.war
       dest: /opt
       url_username: admin
       url_password: admin123
