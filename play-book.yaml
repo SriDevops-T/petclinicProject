@@ -3,8 +3,8 @@
   tasks:
   - name: Pull .war artifact from Artifactory
     become: true
-    get_url:
-      url: http://34.212.121.64:8081/artifactory/libs-release-local/org/springframework/samples/spring-petclinic/4.2-RELEASE/spring-petclinic-4.2-RELEASE.war
+    get_url:http://34.216.135.93:8081/artifactory/libs-release-local/org/springframework/samples/spring-petclinic/4.2-RELEASE/spring-petclinic-4.2-RELEASE.war
+      url: 
       dest: /opt
       url_username: admin
       url_password: admin123
@@ -15,7 +15,7 @@
 
   - name: Build image and with build args
     docker_image:
-      name: ecommweb
+      name: petclinicweb
       build:
         path: /opt
         pull: no
@@ -31,7 +31,7 @@
 
   - name: Push to docker hub
     docker_image:
-      name: ecommweb
+      name: petclinicweb
       repository: cicdcontainer/webappproject:1.0
       push: yes
       source: local
