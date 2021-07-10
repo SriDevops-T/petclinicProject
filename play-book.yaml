@@ -3,7 +3,7 @@
   tasks:
   - name: Pull .war artifact from Artifactory
     become: true
-    get_url:http://34.216.135.93:8081/artifactory/libs-release-local/org/springframework/samples/spring-petclinic/4.2-RELEASE/spring-petclinic-4.2-RELEASE.war
+    get_url:http://34.215.55.35:8081/artifactory/libs-release-local/org/springframework/samples/spring-petclinic/4.2-RELEASE/spring-petclinic-4.2-RELEASE.war
       url: 
       dest: /opt
       url_username: admin
