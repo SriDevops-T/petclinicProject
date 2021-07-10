@@ -15,8 +15,6 @@
         <url>http://34.215.55.35:8081/artifactory/libs-release-local</url>
     </repository>
 </distributionManagement>
-	
-
     <properties>
 
         <!-- Generic properties in java spring  -->
