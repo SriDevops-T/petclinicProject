@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ecomm-service
+  name: pet-service
   labels:
-    app: ecomm-app
+    app: pet-app
     
 spec:
   selector:
-    app: ecomm-app
+    app: pet-app
   type: NodePort
   ports:
   - nodePort: 31000
