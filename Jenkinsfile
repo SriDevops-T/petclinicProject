@@ -25,6 +25,7 @@ pipeline
             steps
             {
                 sh "mvn package"
+                
             }
         }
         stage("SonarQube-Code Analysis")
