@@ -16,6 +16,7 @@ pipeline
         {
             steps
             {
+                echo "checkout from github"
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'petrepo', url: 'https://github.com/SriDevops-T/petclinicProject.git']]])
             }
         }
