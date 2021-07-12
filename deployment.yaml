@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecomm-deploy
+  name: pet-deploy
   labels:
-    app: ecomm-app
+    app: pet-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: ecomm-app
+      app: pet-app
   template:
     metadata:
       labels:
-        app: ecomm-app
+        app: pet-app
     spec:
       containers:
-      - name: ecomm-webapp
+      - name: petclinicweb
         image: cicdcontainer/webappproject:1.0
         ports:
         - containerPort: 8888
