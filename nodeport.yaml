@@ -4,6 +4,7 @@ metadata:
   name: ecomm-service
   labels:
     app: ecomm-app
+    
 spec:
   selector:
     app: ecomm-app
