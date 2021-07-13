@@ -4,8 +4,8 @@
   - name: Pull .war artifact from Artifactory
     become: false
     get_url:
-      url: http://52.89.131.165:8081/artifactory/libs-release-local/org/springframework/samples/spring-petclinic/4.2-RELEASE/spring-petclinic-4.2-RELEASE.war
-      dest: /home/admin
+      url: http://54.187.121.204:8081/artifactory/libs-release-local/org/springframework/samples/spring-petclinic/4.2-RELEASE/spring-petclinic-4.2-RELEASE.war
+      dest: /home/srinivas
       url_username: admin
       url_password: admin123
 
@@ -17,7 +17,7 @@
     docker_image:
       name: petclinicweb
       build:
-        path: /home/admin
+        path: /home/srinivas
         pull: no
         args:
           listen_port: 8888
