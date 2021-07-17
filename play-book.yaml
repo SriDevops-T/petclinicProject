@@ -4,7 +4,7 @@
   - name: Pull .war artifact from Artifactory
     become: false
     get_url:
-      url: http://35.167.57.87:8081/artifactory/libs-release-local/org/springframework/samples/spring-petclinic/4.2-RELEASE/spring-petclinic-4.2-RELEASE.war
+      url: http://34.219.100.26:8081/artifactory/libs-release-local/org/springframework/samples/spring-petclinic/4.2-RELEASE/spring-petclinic-4.2-RELEASE.war
       dest: /home/srinivas
       url_username: admin
       url_password: admin123
