@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.springframework.samples</groupId>
     <artifactId>spring-petclinic</artifactId>
-    <version>4.5.0</version>
+    <version>4.5.2-SNAPSHOT</version>
   <name>petclinic</name>
     <packaging>war</packaging>
 
@@ -22,7 +22,7 @@
     <scm>
         <developerConnection>scm:git:https://github.com/SriDevops-T/petclinicProject.git</developerConnection>
         <url>https://github.com/SriDevops-T/petclinicProject.git</url>
-        <tag>4.5.0</tag>
+        <tag>4.4.0</tag>
     </scm>
 
     <properties>
