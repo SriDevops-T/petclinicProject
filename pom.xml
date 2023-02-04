@@ -8,13 +8,13 @@
     <packaging>war</packaging>
 
     <distributionManagement>
-	<snapshotRepository>
+        <snapshotRepository>
         <id>nexus</id>
-	<url>http://43.205.255.187:8081/repository/maven-snapshot-nexus-repo/</url>
+        <url>http://43.205.255.187:8081/repository/maven-snapshot-nexus-repo/</url>
        </snapshotRepository>
        <repository>
-	       <id>nexus</id>
-	       <url>http://43.205.255.187:8081/repository/maven-release-nexus-repo/</url>
+               <id>nexus</id>
+               <url>http://43.205.255.187:8081/repository/maven-release-nexus-repo/</url>
        </repository>
    </distributionManagement>
 
@@ -28,12 +28,10 @@
     <properties>
 
         <!-- Generic properties in java spring  -->
-       
-  <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
-  <maven.compiler.target>11</maven.compiler.target>
-  <maven.compiler.source>11</maven.compiler.source>
-
-        <java.version>11</java.version>
+       <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <maven.compiler.source>1.8</maven.compiler.source>
+  <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -60,8 +58,8 @@
         <dandelion.version>1.1.1</dandelion.version>
         <dandelion.datatables.version>1.1.0</dandelion.datatables.version>
 
-	<cobertura.version>2.7</cobertura.version>
-	<project.scm.id>github</project.scm.id>
+        <cobertura.version>2.7</cobertura.version>
+        <project.scm.id>github</project.scm.id>
 
     </properties>
 
@@ -311,14 +309,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.0</version>
+                <version>3.6.1</version>
                 <configuration>
                     <compilerArguments>
-                        <Xlint />
+                        <source>1.8</source>
+                    <target>1.8</target>
                     </compilerArguments>
                     <verbose>true</verbose>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
                     <showWarnings>true</showWarnings>
                 </configuration>
             </plugin>
@@ -381,7 +378,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-				<url>http://18.236.178.6:8085/manager/text</url>
+                                <url>http://18.236.178.6:8085/manager/text</url>
                     <server>apache-tomcat</server>
                       <username>admin</username>
     <password>admin</password>
@@ -425,38 +422,38 @@
         </plugins>
     </reporting>
     <profiles>
-		<profile>
-			<id>bower-install</id>
-  			<build>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>exec-maven-plugin</artifactId>
+                <profile>
+                        <id>bower-install</id>
+                        <build>
+                        <plugins>
+                                <plugin>
+                                        <groupId>org.codehaus.mojo</groupId>
+                                        <artifactId>exec-maven-plugin</artifactId>
                     <version>1.4.0</version>
-					<executions>
-						<execution>
-							<phase>generate-sources</phase>
-							<goals>
-								<goal>exec</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<executable>bower</executable>
-						<arguments>
-							<argument>install</argument>
-						</arguments>
-						<workingDirectory>${basedir}</workingDirectory>
-					</configuration>
-				</plugin>
-			</plugins>
-		  </build>
-		</profile>
+                                        <executions>
+                                                <execution>
+                                                        <phase>generate-sources</phase>
+                                                        <goals>
+                                                                <goal>exec</goal>
+                                                        </goals>
+                                                </execution>
+                                        </executions>
+                                        <configuration>
+                                                <executable>bower</executable>
+                                                <arguments>
+                                                        <argument>install</argument>
+                                                </arguments>
+                                                <workingDirectory>${basedir}</workingDirectory>
+                                        </configuration>
+                                </plugin>
+                        </plugins>
+                  </build>
+                </profile>
         <profile>
             <id>less-install</id>
             <build>
                 <plugins>
-				<plugin> 
+                                <plugin> 
 <groupId>org.apache.tomcat.maven</groupId> 
 <artifactId>tomcat7-maven-plugin</artifactId> 
 <version>2.2</version> 
@@ -487,8 +484,8 @@
                                 </goals>
                             </execution>
                         </executions>
-		</plugin>
-		
+                </plugin>
+
                 </plugins>
             </build>
         </profile>
